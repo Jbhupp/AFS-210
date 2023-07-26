@@ -30,7 +30,7 @@ def loop1Rec(num = 0,odd_sum = 0):
     else: 
         return odd_sum
     print( odd_sum)
-loop1Rec(0)
+print(loop1Rec(0))
     
 
 def loop2Rec(num = 0,even_sum = 0):
@@ -44,4 +44,4 @@ def loop2Rec(num = 0,even_sum = 0):
     else: 
         return even_sum
         print(even_sum)
-loop2Rec(0)
+print(loop2Rec(0))
