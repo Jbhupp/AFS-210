@@ -1,24 +1,25 @@
-def binary_recursive(arr, elem, start=0, end=None):
-    if end is None:
-        end = len(arr) - 1
-    if start > end:
-        return False
+def binary_search(list, term):
+    start = 0 # First index
+    last = len(list) - 1 # Last index
 
-    mid = (start + end) // 2
-    if elem == arr[mid]:
-        return mid
-    if elem < arr[mid]:
-        return True
-        # binary_recursive(arr, elem, start, mid-1)
-    # elem > arr[mid]
+    while start <= last: # While number isn't found
+
+        middle = start + (last - start) // 2 # Calculate middle point in list
+
+        if list[middle] == term: # If middle of list is equal to term
+            return True 
+        elif list[middle] < term: # If middle of list is less than term, search left side of list, else, search right side of list.
+            start = middle + 1
+        else:
+            last = middle - 1
     return False
-    # binary_recursive(arr, elem, mid+1, end)
 
-array = [7, 20, 26, 31, 40, 51, 55, 63, 74, 81]
 
-print(binary_recursive(array,31))
-print(binary_recursive(array,77))
+        
 
-array = ["Alpha", "Beta", "Delta", "Epsilon", "Gamma", "Theta", "Zeta"]
+my_list = [7, 20, 26, 31, 40, 51, 55, 63, 74, 81]
+print(binary_search(my_list, 31)) # Find 31
+print(binary_search(my_list, 77)) # Find 77
 
-print(binary_recursive(array, "Delta"))
+my_list_2 = ["Alpha", "Beta", "Delta", "Epsilon", "Gamma", "Theta", "Zeta"]
+print(binary_search(my_list_2, "Delta")) # Find "Delta"
